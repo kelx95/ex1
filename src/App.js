@@ -69,7 +69,7 @@ function App() {
     />
   ));
 
-  const SortableList = SortableContainer(({ items }) => {
+  const SortableList = SortableContainer(() => {
     return (
       <div className="books">
         {books &&
@@ -126,9 +126,7 @@ function App() {
           {loading ? (
             <Loading color={"green"} />
           ) : (
-            books && (
-              <SortableList items={books} onSortEnd={onSortEnd} axis="xy" />
-            )
+            books && <SortableList onSortEnd={onSortEnd} axis="xy" />
           )}
         </div>
       </div>
